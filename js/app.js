@@ -31,6 +31,10 @@ const gameStarter = document.getElementById("starter")
 
             const gridCells = document.querySelector(".grid-wrapper");
 
+            
+            // const removeCells = document.getElementsByClassName("cell");
+            //         removeCells.remove;
+
                     const gridSize = 10; //number
                     const cells = gridSize ** 2; //number
 
