@@ -22,15 +22,15 @@ main {
     align-items: center;
 }
 
-.cell100{
+.cell-10{
     width: calc(100% / 10);
 }
 
-.cell81{
+.cell-9{
     width: calc(100% / 9);
 }
 
-.cell49{
+.cell-7{
     width: calc(100% / 7);
 }
 

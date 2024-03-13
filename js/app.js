@@ -25,18 +25,19 @@ const gameStarter = document.getElementById("starter")
 
 
 
-        const difficultSelector = document.getElementById("difficult").value
+        const difficultSelector = parseInt(document.getElementById("difficult").value)
 
-        if (difficultSelector === "1"){
+        if (difficultSelector === 10 || difficultSelector === 9 || difficultSelector === 7){
 
             const gridCells = document.querySelector(".grid-wrapper");
 
+                    gridCells.innerHTML = " "
             
             // const removeCells = document.getElementsByClassName("cell");
             //         removeCells.remove;
 
-                    const gridSize = 10; //number
-                    const cells = gridSize ** 2; //number
+                    
+                    const cells = difficultSelector ** 2; //number
 
                     for(let i = 0; i < cells; i++){
 
@@ -46,7 +47,7 @@ const gameStarter = document.getElementById("starter")
                         const cell = document.createElement("div");
 
                             cell.classList.add("cell");
-                            cell.classList.add("cell100")
+                            cell.classList.add(`cell-${difficultSelector}`)
 
                             cell.innerHTML = cellNumber;
 
@@ -61,77 +62,9 @@ const gameStarter = document.getElementById("starter")
                         })
                     }
         }
-        else if(difficultSelector === "2"){
-                
-            const gridCells = document.querySelector(".grid-wrapper");
-
-            const gridSize = 9; //number
-            const cells = gridSize ** 2; //number
-
-            for(let i = 0; i < cells; i++){
-
-                let cellNumber = i + 1; //1-100 number
-                // console.log(cellNumber)
-
-                const cell = document.createElement("div");
-
-                    cell.classList.add("cell");
-                    cell.classList.add("cell81")
-
-                    cell.innerHTML = cellNumber;
-
-                gridCells.append(cell);
-
-                cell.addEventListener("click", function(){
-
-                    cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
-                    // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
-                    console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
-
-                })
-            }
-        }
-        else if(difficultSelector === "3"){
-
-
-            const gridCells = document.querySelector(".grid-wrapper");
-
-            const gridSize = 7; //number
-            const cells = gridSize ** 2; //number
-
-            for(let i = 0; i < cells; i++){
-
-                let cellNumber = i + 1; //1-100 number
-                // console.log(cellNumber)
-
-                const cell = document.createElement("div");
-
-                    cell.classList.add("cell");
-                    cell.classList.add("cell49")
-
-                    cell.innerHTML = cellNumber;
-
-                gridCells.append(cell);
-
-                cell.addEventListener("click", function(){
-
-                    cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
-                    // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
-                    console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
-
-                })
-            }
-        }
         else {
             // console.log("scegli la difficoltà!")
             alert("Scegli la difficoltà!")
         }
 })
-
-
-
-
-
-
-        
 
