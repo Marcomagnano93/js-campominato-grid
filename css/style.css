@@ -5,7 +5,7 @@ header {
 
 main {
     background-color: aqua;
-    height: 100vh;
+
 }
 
 .grid-wrapper{
@@ -17,6 +17,5 @@ main {
 .cell {
     aspect-ratio: 1 / 1;
     border: 2px solid black;
-    padding: 20px;
     width: calc(100% / 10);
 }
