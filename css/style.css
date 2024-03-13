@@ -2,3 +2,21 @@ header {
     background-color: rgb(20, 28, 44);
     color: white;
 }
+
+main {
+    background-color: aqua;
+    height: 100vh;
+}
+
+.grid-wrapper{
+   display: flex;
+   flex-wrap: wrap;
+}
+
+
+.cell {
+    aspect-ratio: 1 / 1;
+    border: 2px solid black;
+    padding: 20px;
+    width: calc(100% / 10);
+}
