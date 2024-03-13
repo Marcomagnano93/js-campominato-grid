@@ -17,10 +17,21 @@ main {
 .cell {
     aspect-ratio: 1 / 1;
     border: 2px solid black;
-    width: calc(100% / 10);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cell100{
+    width: calc(100% / 10);
+}
+
+.cell81{
+    width: calc(100% / 9);
+}
+
+.cell49{
+    width: calc(100% / 7);
 }
 
 .cell.bg-selected{

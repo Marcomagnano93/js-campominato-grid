@@ -12,36 +12,122 @@
 //--USA .TOGLE PER FAR SI CHE LA CLASSE VENGA AGGIUNTA SOLO SE NON E' GIà PRESENTE
 //INSERISCI TUTTO SOTTO L'EVENT LISTENER CLICK SUL BOTTONE
 
+//*******   BONUS   *******//
+//COLLEGA LA LABEL
+//GENERA UN CICLO FOR DIFFERENTE IN BASE ALLA DIFFICOLTA' SCELTE
+//--CAMBIA LA DIMENSIONE DI GRIDSIZE (E QUINDI IL NUMERO DI CICLI DEL FOR), USA L'OPERATORE DI POTENZA ** NON IL * PER IL CALCOLO DI CELS
+//--CAMBIA ANCHE IL NOME DELLA CLASSE CHE DA LA DIMENSIONE DELLE CELLE PER AVERE SEMPRE UNA SCACCHIERA QUADRATA
+
+
 
 const gameStarter = document.getElementById("starter")
+    gameStarter.addEventListener("click", function(){
 
-        gameStarter.addEventListener("click", function(){
+
+
+        const difficultSelector = document.getElementById("difficult").value
+
+        if (difficultSelector === "1"){
 
             const gridCells = document.querySelector(".grid-wrapper");
 
-                const gridSize = 10; //number
-                const cells = gridSize * 10; //number
+                    const gridSize = 10; //number
+                    const cells = gridSize ** 2; //number
 
-                for(let i = 0; i < cells; i++){
+                    for(let i = 0; i < cells; i++){
 
-                    let cellNumber = i + 1; //1-100 number
-                    // console.log(cellNumber)
+                        let cellNumber = i + 1; //1-100 number
+                        // console.log(cellNumber)
 
-                    const cell = document.createElement("div");
+                        const cell = document.createElement("div");
 
-                        cell.classList.add("cell");
+                            cell.classList.add("cell");
+                            cell.classList.add("cell100")
 
-                        cell.innerHTML = cellNumber;
+                            cell.innerHTML = cellNumber;
 
-                    gridCells.append(cell);
+                        gridCells.append(cell);
 
-                    cell.addEventListener("click", function(){
+                        cell.addEventListener("click", function(){
 
-                        cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
-                        // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
-                        console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
+                            cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
+                            // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
+                            console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
 
-                    })
-                }
-        })
+                        })
+                    }
+        }
+        else if(difficultSelector === "2"){
+                
+            const gridCells = document.querySelector(".grid-wrapper");
+
+            const gridSize = 9; //number
+            const cells = gridSize ** 2; //number
+
+            for(let i = 0; i < cells; i++){
+
+                let cellNumber = i + 1; //1-100 number
+                // console.log(cellNumber)
+
+                const cell = document.createElement("div");
+
+                    cell.classList.add("cell");
+                    cell.classList.add("cell81")
+
+                    cell.innerHTML = cellNumber;
+
+                gridCells.append(cell);
+
+                cell.addEventListener("click", function(){
+
+                    cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
+                    // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
+                    console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
+
+                })
+            }
+        }
+        else if(difficultSelector === "3"){
+
+
+            const gridCells = document.querySelector(".grid-wrapper");
+
+            const gridSize = 7; //number
+            const cells = gridSize ** 2; //number
+
+            for(let i = 0; i < cells; i++){
+
+                let cellNumber = i + 1; //1-100 number
+                // console.log(cellNumber)
+
+                const cell = document.createElement("div");
+
+                    cell.classList.add("cell");
+                    cell.classList.add("cell49")
+
+                    cell.innerHTML = cellNumber;
+
+                gridCells.append(cell);
+
+                cell.addEventListener("click", function(){
+
+                    cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
+                    // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
+                    console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
+
+                })
+            }
+        }
+        else {
+            // console.log("scegli la difficoltà!")
+            alert("Scegli la difficoltà!")
+        }
+})
+
+
+
+
+
+
+        
 
