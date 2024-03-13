@@ -12,20 +12,35 @@
 //--USA .TOGLE PER FAR SI CHE LA CLASSE VENGA AGGIUNTA SOLO SE NON E' GIà PRESENTE
 //INSERISCI TUTTO SOTTO L'EVENT LISTENER CLICK SUL BOTTONE
 
-const gridCells = document.querySelector(".grid-wrapper");
 
-const gridSize = 10; //number
-const cells = gridSize * 10; //number
+const gameStarter = document.getElementById("starter")
 
-for(let i = 0; i < cells; i++){
+        gameStarter.addEventListener("click", function(){
 
-   let cellNumber = i + 1; //1-100 number
-   console.log(cellNumber)
+            const gridCells = document.querySelector(".grid-wrapper");
 
-    const cell = document.createElement("div");
+                const gridSize = 10; //number
+                const cells = gridSize * 10; //number
 
-    cell.classList.add("cell")
+                for(let i = 0; i < cells; i++){
 
-    gridCells.append(cell)
+                    let cellNumber = i + 1; //1-100 number
+                    console.log(cellNumber)
 
-}
+                    const cell = document.createElement("div");
+
+                        cell.classList.add("cell");
+
+                        cell.innerHTML = cellNumber;
+
+                    gridCells.append(cell);
+
+
+                    
+
+                }
+
+
+
+        })
+
