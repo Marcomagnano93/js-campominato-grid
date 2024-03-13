@@ -25,7 +25,7 @@ const gameStarter = document.getElementById("starter")
                 for(let i = 0; i < cells; i++){
 
                     let cellNumber = i + 1; //1-100 number
-                    console.log(cellNumber)
+                    // console.log(cellNumber)
 
                     const cell = document.createElement("div");
 
@@ -35,12 +35,13 @@ const gameStarter = document.getElementById("starter")
 
                     gridCells.append(cell);
 
+                    cell.addEventListener("click", function(){
 
-                    
+                        cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
+                        // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
+                        console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
 
+                    })
                 }
-
-
-
         })
 
