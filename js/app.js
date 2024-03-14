@@ -11,44 +11,49 @@
 //INSERISCI TUTTO SOTTO L'EVENT LISTENER CLICK SUL BOTTONE
 
 const gameStarter = document.getElementById("starter");
-    gameStarter.addEventListener("click", function(){
 
-        const difficultSelector = parseInt(document.getElementById("difficult").value);
 
-        if (difficultSelector === 10 || difficultSelector === 9 || difficultSelector === 7){
+    gameStarter.addEventListener("click", startGame);
 
-            const gridCells = document.querySelector(".grid-wrapper");
+function startGame () {
 
-                    gridCells.innerHTML = " ";
+        
+    const difficultSelector = parseInt(document.getElementById("difficult").value);
 
-                    const cells = difficultSelector ** 2; //number
+    if (difficultSelector === 10 || difficultSelector === 9 || difficultSelector === 7){
 
-                    for(let i = 0; i < cells; i++){
+        const gridCells = document.querySelector(".grid-wrapper");
 
-                        let cellNumber = i + 1; //1-100 number
-                        // console.log(cellNumber)
+                gridCells.innerHTML = " ";
 
-                        const cell = document.createElement("div");
+                const cells = difficultSelector ** 2; //number
 
-                            cell.classList.add("cell");
-                            cell.classList.add(`cell-${difficultSelector}`)
+                for(let i = 0; i < cells; i++){
 
-                            cell.innerHTML = cellNumber;
+                    let cellNumber = i + 1; //1-100 number
+                    // console.log(cellNumber)
 
-                        gridCells.append(cell);
+                    const cell = document.createElement("div");
 
-                        cell.addEventListener("click", function(){
+                        cell.classList.add("cell");
+                        cell.classList.add(`cell-${difficultSelector}`)
 
-                            cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
-                            // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
-                            console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
+                        cell.innerHTML = cellNumber;
 
-                        })
-                    }
-        }
-        else {
-            // console.log("scegli la difficoltà!")
-            alert("Scegli la difficoltà!")
-        }
-})
+                    gridCells.append(cell);
 
+                    cell.addEventListener("click", function(){
+
+                        cell.classList.add("bg-selected") //Se vogliamo che la casella una volta ottenuto il bg non possa perderlo
+                        // cell.classList.toggle("bg-selected") //se vogliamo che una volta "selezionata" la casella possiamo "deselezionarla"
+                        console.log(`Hai selezionato la casella numero: "${cellNumber}"`)
+
+                    })
+                }
+    }
+    else {
+        // console.log("scegli la difficoltà!")
+        alert("Scegli la difficoltà!")
+    }
+    
+}
